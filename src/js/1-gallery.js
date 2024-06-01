@@ -84,3 +84,4 @@ function imgsTemplate(arr) {
   return arr.map(imgTemplate).join('');
 }
 ulGalleryEl.innerHTML = imgsTemplate(images);
+
