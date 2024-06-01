@@ -1,5 +1,12 @@
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
-import "simplelightbox/dist/simple-lightbox.min.css";
-import "./js/1-gallery"
-import SimpleLightbox from "simplelightbox";
-import SimpleLightbox from "simplelightbox/dist/simple-lightbox.esm";
+import SimpleLightbox from 'simplelightbox';
+
+import './js/1-gallery';
+
+let gallery = new SimpleLightbox('.gallery a');
+gallery.on('show.simplelightbox', function () {});
+
+gallery.on('error.simplelightbox', function (e) {
+  console.log(e);
+});
