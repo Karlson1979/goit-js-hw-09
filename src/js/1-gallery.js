@@ -1,3 +1,6 @@
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
+import SimpleLightbox from 'simplelightbox';
 const images = [
   {
     preview:
@@ -85,3 +88,10 @@ function imgsTemplate(arr) {
 }
 ulGalleryEl.innerHTML = imgsTemplate(images);
 
+let gallery = new SimpleLightbox('.gallery a', { captions: true,
+  captionsData: 'alt',
+  captionDelay: 250,
+  captionPosition: 'bottom',
+
+
+});
