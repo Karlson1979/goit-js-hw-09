@@ -18,15 +18,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedFormData = localStorage.getItem('feedback-form-state');
   if (savedFormData) {
     formData = JSON.parse(savedFormData);
-    inputEl.value = formData.email;
-    textareaEl.value = formData.message;
+    inputEl.value = formData.email.trim();
+    textareaEl.value = formData.message.trim();
   }
 });
 
 formEl.addEventListener('submit', (e) => {
   e.preventDefault();
-  if (formData.email && formData.message) {
-    console.log(formData);
+
+  const trimmedEmail = formData.email.trim();
+  const trimmedMessage = formData.message.trim();
+
+  if (trimmedEmail && trimmedMessage) {
+    console.log({ email: trimmedEmail, message: trimmedMessage });
     localStorage.removeItem('feedback-form-state');
     formData = { email: "", message: "" };
     inputEl.value = "";
